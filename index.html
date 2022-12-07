@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+       <div class="box">
+            <div class="box1 ">
+                <h1 id="t1">WEATHER</h1>
+                <div class="text">
+                    <label id="l1" for=""><b><span class="material-symbols-outlined">
+                        thermostat
+                        </span></b></label>
+
+                    <input id="text1" type="text">
+                    <br>
+                    <label id="l2" for=""><b>Feels like</b></label>
+                    
+                    <input id="text2" type="text">
+                    <br>
+                    <label id="l3" for=""><b><span class="material-symbols-outlined">
+                        location_on
+                        </span></b></label>
+                    
+                    <input id="text3" type="text">
+                    <br>
+                    <label id="l4" for=""><span class="material-symbols-outlined">
+                        acute
+                        </span></label>
+                    
+                    <input id="text4" type="text">
+                    <br>
+                    <span id="icon" class="material-symbols-outlined">
+                        cloudy
+                        </span>        
+                    <input id="text5" type="text">
+                    
+
+
+                </div>
+
+            </div>
+            <div class="box2 ">
+                <input id="place" class="t2" placeholder="Place Name" type="text">
+                <div class="btn">                   
+                        <button onclick="search()" type="button"class="btn btn-primary "><span class="material-symbols-outlined">
+                            search
+                            </span></button>                    
+               
+
+                </div>
+                <hr>
+                <h5 id="t2"><b>Weather Details</b></h5>
+                <div class="d1">
+                    <h6 id="t3"><b>Country</b></h6>
+                    <input id="c1" class="blank1" type="text"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="18" y1="6" x2="18" y2="6.01"></line>
+                        <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5"></path>
+                        <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15"></polyline>
+                        <line x1="9" y1="4" x2="9" y2="17"></line>
+                        <line x1="15" y1="15" x2="15" y2="20"></line>
+                     </svg>
+                    <h6 id="t3"><b>Humidity</b></h6>
+                    <input id="c2"  class="blank2" type="text"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-percentage" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="17" cy="17" r="1"></circle>
+                        <circle cx="7" cy="7" r="1"></circle>
+                        <line x1="6" y1="18" x2="18" y2="6"></line>
+                     </svg>
+                    <h6 id="t3"><b>Wind</b></h6>
+                    <input id="c3" class="blank3" type="text"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wind" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24"></path>
+                        <path d="M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24"></path>
+                        <path d="M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24"></path>
+                     </svg>
+                    <h6 id="t3"><b>Pressure</b></h6>
+                    <input id="c4" class="blank4" type="text"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-scale-outline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                        <path d="M12 7c1.956 0 3.724 .802 4.994 2.095l-2.956 2.904a3 3 0 0 0 -2.038 -.799a3 3 0 0 0 -2.038 .798l-2.956 -2.903a6.979 6.979 0 0 1 4.994 -2.095z"></path>
+                     </svg>
+
+                
+
+                </div>
+                <hr>
+            </div>
+
+       </div>  
+    </div>
+</body>
+<script>
+    function search(){
+        let weather=place.value
+        console.log(weather);
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${weather}&appid=8ac5c4d57ba6a4b3dfcf622700447b1e`)
+        .then((result)=>{
+         result.json()
+        .then((obj)=>{
+            displayData(obj);
+        })
+        })
+    }
+    function displayData(data){
+        let weatherDetails=data
+        let country=weatherDetails.sys.country
+        let Humidity=weatherDetails.main.humidity
+        let wind=weatherDetails.wind.speed
+        let pressure=weatherDetails.main.pressure
+        let temperature=weatherDetails.main.temp
+        let Atemperature=weatherDetails.main.feels_like
+        let name=weatherDetails.name
+        let timezone=weatherDetails.timezone
+        let clouds=weatherDetails.weather[0].main
+
+
+
+        console.log(country);
+        document.getElementById('c1').value=country
+        document.getElementById('c2').value=Humidity
+        document.getElementById('c3').value=wind
+        document.getElementById('c4').value=pressure
+        document.getElementById('text1').value=temperature
+        document.getElementById('text2').value=Atemperature
+        document.getElementById('text3').value=name
+        document.getElementById('text4').value=timezone
+        document.getElementById('text5').value=clouds
+
+
+    }
+</script>
+</html>
